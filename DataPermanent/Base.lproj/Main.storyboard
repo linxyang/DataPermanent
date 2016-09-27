@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="EdD-dC-YkD">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jyY-Fx-po6">
+                                <rect key="frame" x="270" y="460" width="60" height="30"/>
+                                <animations/>
+                                <state key="normal" title="插入一条"/>
+                                <connections>
+                                    <action selector="insetData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qwV-dz-jqZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fxw-2A-80k">
+                                <rect key="frame" x="278" y="520" width="45" height="30"/>
+                                <animations/>
+                                <state key="normal" title="清除表"/>
+                                <connections>
+                                    <action selector="clearDataBase:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U0X-Mp-wYn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ach-F4-auN">
+                                <rect key="frame" x="270" y="285" width="60" height="30"/>
+                                <animations/>
+                                <state key="normal" title="打开详情"/>
+                                <connections>
+                                    <action selector="openDetailVc:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kxr-65-pbN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fxw-2A-80k" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4LE-eg-nDD"/>
+                            <constraint firstItem="ach-F4-auN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JfP-6H-mKy"/>
+                            <constraint firstItem="jyY-Fx-po6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KiQ-md-hen"/>
+                            <constraint firstItem="fxw-2A-80k" firstAttribute="top" secondItem="jyY-Fx-po6" secondAttribute="bottom" constant="30" id="Pe4-Bf-BhZ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fxw-2A-80k" secondAttribute="bottom" constant="50" id="hjB-rb-Pfj"/>
+                            <constraint firstItem="ach-F4-auN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ypF-XP-AA8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="4Q0-Zm-LEX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1110" y="366"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eOl-17-ES3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EdD-dC-YkD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="R0i-W4-57u">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="nSC-OG-3Zs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZJe-VN-thG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="298" y="366"/>
+        </scene>
+    </scenes>
+</document>

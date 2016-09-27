@@ -1,0 +1,28 @@
+//
+//  PrefixHeader.pch
+//  DataPermanent
+//
+//  Created by fuchun on 16/9/26.
+//  Copyright © 2016年 ylx. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+
+#define userId @"10008487" // 固定写死一个id
+#define nickName @"小小的太阳"
+#define channelName @"AppStore"
+#define channelAlias @"AppStore"
+
+
+
+#import "LDNetworkManager.h"
+#import "LDAPIConst.h"
+#import "MyTool.h"
+#import "StrUtil.h"
+#import "UserPref.h"
+
+
+
+#endif /* PrefixHeader_pch */
