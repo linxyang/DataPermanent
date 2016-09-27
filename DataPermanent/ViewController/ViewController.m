@@ -58,7 +58,7 @@
     NSDate *date =[NSDate date];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
-    formatter.dateFormat = @"yyyy-MM-dd hh:mm:ss";
+    formatter.dateFormat = @"yyyy-MM-dd hh:mm:ss.SSS";
     
     NSString *timeIn = [formatter stringFromDate:date];
     self.enterModel.timeIn = timeIn;
@@ -72,7 +72,7 @@
     NSDate *date =[NSDate date];
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = @"yyyy-MM-dd hh:mm:ss";
+    formatter.dateFormat = @"yyyy-MM-dd hh:mm:ss.SSS";
     formatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
     self.enterModel.timeOut = [formatter stringFromDate:date];
     // 插入数据
@@ -119,7 +119,7 @@
     
     NSDate *date =[NSDate date];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = @"yyyy-MM-dd hh:mm:ss";
+    formatter.dateFormat = @"yyyy-MM-dd hh:mm:ss.SSS";
     formatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
     self.clickModel.operationTime = [formatter stringFromDate:date];// 点击时间
     [[LDDataBaseManager shareManager] insetDataWithActionListModel:self.clickModel];
