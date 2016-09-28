@@ -2,7 +2,7 @@
 //  DetailViewController.m
 //  DataPermanent
 //
-//  Created by fuchun on 16/9/27.
+//  Created by Yanglixia on 16/9/27.
 //  Copyright © 2016年 ylx. All rights reserved.
 //
 
@@ -11,29 +11,16 @@
 #import "userActionListModel.h"
 
 @interface DetailViewController ()
-/** 进入页面用户行为模型 */
-@property (nonatomic, strong) userActionListModel *enterModel;
 /** 点击发布的用户行为模型 */
 @property (nonatomic, strong) userActionListModel *clickModel;
 @end
 
 @implementation DetailViewController
 
-- (userActionListModel *)enterModel
-{
-    if (!_enterModel) {
-        _enterModel = [[userActionListModel alloc] init];
-        _enterModel.page = NSStringFromClass([self class]);
-        _enterModel.event = @"enter_page";
-    }
-    return _enterModel;
-}
-
 - (userActionListModel *)clickModel
 {
     if (!_clickModel) {
         _clickModel = [[userActionListModel alloc] init];
-        _clickModel.page = NSStringFromClass([self class]);
         _clickModel.event = @"click_public";
     }
     return _clickModel;
@@ -55,28 +42,9 @@
     
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-    NSDate *date =[NSDate date];
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = @"yyyy-MM-dd hh:mm:ss.SSS";
-    formatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
-    NSString *timeIn = [formatter stringFromDate:date];
-    self.enterModel.timeIn = timeIn;
-    
-}
-
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    NSDate *date =[NSDate date];
-    
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = @"yyyy-MM-dd hh:mm:ss.SSS";
-    formatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
-    self.enterModel.timeOut = [formatter stringFromDate:date];
     // 插入数据
     [[LDDataBaseManager shareManager] insetDataWithActionListModel:self.enterModel];
 }
@@ -90,9 +58,11 @@
 {
     NSDate *date =[NSDate date];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = @"yyyy-MM-dd hh:mm:ss.SSS";
+    formatter.dateFormat = @"yyyy-MM-dd HH:mm:ss.SSS";
     formatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
     self.clickModel.operationTime = [formatter stringFromDate:date];// 点击时间
+    self.clickModel.timeIn = self.enterModel.timeIn;//按钮所在页面进入时间
+    self.clickModel.page = self.enterModel.page;//页面名称
     [[LDDataBaseManager shareManager] insetDataWithActionListModel:self.clickModel];
     
     [self.navigationController popViewControllerAnimated:YES];

@@ -21,7 +21,7 @@
                                 <rect key="frame" x="270" y="460" width="60" height="30"/>
                                 <state key="normal" title="发送数据"/>
                                 <connections>
-                                    <action selector="insetData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qwV-dz-jqZ"/>
+                                    <action selector="sendData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lNg-De-w9j"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fxw-2A-80k">

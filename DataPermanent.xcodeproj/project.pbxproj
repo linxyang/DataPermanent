@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		026501F01D9C236500CDA3B3 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 026501EF1D9C236500CDA3B3 /* BaseViewController.m */; };
 		02BEDBF81D998808006F62B4 /* userActionListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BEDBF71D998808006F62B4 /* userActionListModel.m */; };
 		57231B921D9A4DD800F190BB /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57231B911D9A4DD800F190BB /* DetailViewController.m */; };
 		574AF1551D98C8AA00A93B2E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 574AF1541D98C8AA00A93B2E /* main.m */; };
@@ -32,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		026501EE1D9C236500CDA3B3 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		026501EF1D9C236500CDA3B3 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		02BEDBF61D998808006F62B4 /* userActionListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = userActionListModel.h; sourceTree = "<group>"; };
 		02BEDBF71D998808006F62B4 /* userActionListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = userActionListModel.m; sourceTree = "<group>"; };
 		57231B901D9A4DD800F190BB /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
@@ -175,6 +178,8 @@
 		574AF1701D98C9FA00A93B2E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				026501EE1D9C236500CDA3B3 /* BaseViewController.h */,
+				026501EF1D9C236500CDA3B3 /* BaseViewController.m */,
 				574AF1711D98CA0C00A93B2E /* ViewController.h */,
 				574AF1721D98CA0C00A93B2E /* ViewController.m */,
 				57231B901D9A4DD800F190BB /* DetailViewController.h */,
@@ -358,6 +363,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				026501F01D9C236500CDA3B3 /* BaseViewController.m in Sources */,
 				574AF16E1D98C96C00A93B2E /* LDNetworkManager.m in Sources */,
 				574AF1CA1D990B5A00A93B2E /* Encrypt.m in Sources */,
 				574AF1D11D990B6000A93B2E /* XYMKeyChain.m in Sources */,

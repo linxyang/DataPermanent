@@ -2,7 +2,7 @@
 //  NSString+IP.m
 //  DataPermanent
 //
-//  Created by fuchun on 16/9/26.
+//  Created by Yanglixia on 16/9/26.
 //  Copyright © 2016年 ylx. All rights reserved.
 //
 

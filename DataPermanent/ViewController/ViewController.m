@@ -2,7 +2,7 @@
 //  ViewController.m
 //  DataPermanent
 //
-//  Created by fuchun on 16/9/26.
+//  Created by Yanglixia on 16/9/26.
 //  Copyright © 2016年 ylx. All rights reserved.
 //
 
@@ -14,29 +14,17 @@
 
 
 @interface ViewController ()
-/** 进入页面用户行为模型 */
-@property (nonatomic, strong) userActionListModel *enterModel;
 /** 点击跳转的用户行为模型 */
 @property (nonatomic, strong) userActionListModel *clickModel;
 @end
 
 @implementation ViewController
 
-- (userActionListModel *)enterModel
-{
-    if (!_enterModel) {
-        _enterModel = [[userActionListModel alloc] init];
-        _enterModel.page = NSStringFromClass([self class]);
-        _enterModel.event = @"enter_page";
-    }
-    return _enterModel;
-}
 
 - (userActionListModel *)clickModel
 {
     if (!_clickModel) {
         _clickModel = [[userActionListModel alloc] init];
-        _clickModel.page = NSStringFromClass([self class]);
         _clickModel.event = @"watch_video";
     }
     return _clickModel;
@@ -51,30 +39,9 @@
     
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    
-    NSDate *date =[NSDate date];
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
-    formatter.dateFormat = @"yyyy-MM-dd hh:mm:ss.SSS";
-    
-    NSString *timeIn = [formatter stringFromDate:date];
-    self.enterModel.timeIn = timeIn;
-    
-    
-}
-
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    NSDate *date =[NSDate date];
-    
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = @"yyyy-MM-dd hh:mm:ss.SSS";
-    formatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
-    self.enterModel.timeOut = [formatter stringFromDate:date];
     // 插入数据
     [[LDDataBaseManager shareManager] insetDataWithActionListModel:self.enterModel];
 }
@@ -101,27 +68,32 @@
 
 
 
-- (IBAction)insetData:(UIButton *)sender {
+- (IBAction)sendData:(UIButton *)sender {
     
+    // 拿到要发送的数据
     NSDictionary *paras = [[LDDataPermanentManager shareManager] dataPrepare];
-    
+    // 发送
     [[LDDataPermanentManager shareManager] sendDateWithParas:paras];
     
 }
 
 - (IBAction)clearDataBase:(UIButton *)sender {
     
+    // 清除表中所有数据
     [[LDDataBaseManager shareManager] deleteAllData];
     
 }
 
+// 打开详情控制器(对点击事件埋点)
 - (IBAction)openDetailVc:(UIButton *)sender {
     
     NSDate *date =[NSDate date];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = @"yyyy-MM-dd hh:mm:ss.SSS";
+    formatter.dateFormat = @"yyyy-MM-dd HH:mm:ss.SSS";
     formatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
     self.clickModel.operationTime = [formatter stringFromDate:date];// 点击时间
+    self.clickModel.timeIn = self.enterModel.timeIn;//按钮所在页面进入时间
+    self.clickModel.page = self.enterModel.page;//页面名称
     [[LDDataBaseManager shareManager] insetDataWithActionListModel:self.clickModel];
     
     DetailViewController *detaiVc = [[DetailViewController alloc] init];
