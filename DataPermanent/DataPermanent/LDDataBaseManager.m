@@ -146,7 +146,7 @@
 {
     BOOL flag = [_db open];
     if (!flag) {
-        return nil;
+        return @[];
     }
     
     FMResultSet *resultSet = [_db executeQuery:@"SELECT * FROM userActionData_table"];

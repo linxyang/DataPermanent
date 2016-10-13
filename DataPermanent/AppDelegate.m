@@ -19,9 +19,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    
+    // 网络状态监测
+    [[LDNetworkManager shareManager] checkNetworkStatus];
     // 开启数据埋点
-//    [[LDDataPermanentManager shareManager] sendUserActionDataToServerForMin:1];
+    [[LDDataPermanentManager shareManager] sendUserActionDataToServerForMin:5 maxCount:200];
     
     return YES;
 }

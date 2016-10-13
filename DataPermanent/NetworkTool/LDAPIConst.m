@@ -9,14 +9,10 @@
 #import "LDAPIConst.h"
 
 
-NSString * const LDAPIBaseUrl = @"http://192.168.0.249:8080/ldmgr/";
-//@"http://test.liandan100.com/ldmgr/";// 测试
-//@"http://ld.liandan100.com/ldmgr/";  // 正式
+NSString * const LDAPIBaseUrl = @"http://baseUrl.myapp/";// 基址，随便写的，不写公司的，防止数据攻击
 
 NSString * const LDVERSIONNUM = @"48";
 
-NSString * const LDHardwareListUrl = @"api/hardware/list";
-
-NSString * const LDUserActionUrl = @"api/data/useraction";// 目前没部署，用:@"http://192.168.0.249:8080/ldmgr/
+NSString * const LDUserActionUrl = @"api/data/useraction";// 上传用户行数数据接口
 
 

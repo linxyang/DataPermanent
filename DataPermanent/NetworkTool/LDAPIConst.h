@@ -11,11 +11,8 @@
 /// 请求基本Url
 extern NSString * const LDAPIBaseUrl;
 
-/// 项目版本号
+/// 项目build版本号
 extern NSString * const LDVERSIONNUM;
-
-/// 硬件列表
-extern NSString * const LDHardwareListUrl;
 
 /// 数据埋点接口
 extern NSString * const LDUserActionUrl;

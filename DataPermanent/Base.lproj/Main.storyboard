@@ -17,13 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jyY-Fx-po6">
-                                <rect key="frame" x="270" y="460" width="60" height="30"/>
-                                <state key="normal" title="发送数据"/>
-                                <connections>
-                                    <action selector="sendData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lNg-De-w9j"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fxw-2A-80k">
                                 <rect key="frame" x="278" y="520" width="45" height="30"/>
                                 <state key="normal" title="清除表"/>
@@ -43,8 +36,6 @@
                         <constraints>
                             <constraint firstItem="fxw-2A-80k" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4LE-eg-nDD"/>
                             <constraint firstItem="ach-F4-auN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JfP-6H-mKy"/>
-                            <constraint firstItem="jyY-Fx-po6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KiQ-md-hen"/>
-                            <constraint firstItem="fxw-2A-80k" firstAttribute="top" secondItem="jyY-Fx-po6" secondAttribute="bottom" constant="30" id="Pe4-Bf-BhZ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fxw-2A-80k" secondAttribute="bottom" constant="50" id="hjB-rb-Pfj"/>
                             <constraint firstItem="ach-F4-auN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ypF-XP-AA8"/>
                         </constraints>

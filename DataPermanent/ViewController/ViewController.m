@@ -68,15 +68,6 @@
 
 
 
-- (IBAction)sendData:(UIButton *)sender {
-    
-    // 拿到要发送的数据
-    NSDictionary *paras = [[LDDataPermanentManager shareManager] dataPrepare];
-    // 发送
-    [[LDDataPermanentManager shareManager] sendDateWithParas:paras];
-    
-}
-
 - (IBAction)clearDataBase:(UIButton *)sender {
     
     // 清除表中所有数据

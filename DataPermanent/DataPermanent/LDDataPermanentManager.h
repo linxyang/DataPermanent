@@ -14,10 +14,9 @@
 
 + (instancetype)shareManager;
 
-- (void)sendUserActionDataToServerForMin:(NSUInteger)minutes;
+- (void)sendUserActionDataToServerForMin:(NSUInteger)minutes maxCount:(NSInteger)maxCount;
 
 - (NSDictionary *)dataPrepare;
 
-- (void)sendDateWithParas:(NSDictionary *)paras;
 
 @end
